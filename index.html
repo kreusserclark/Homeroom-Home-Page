@@ -4,6 +4,14 @@
     <title>English I Home</title>
     <style>
     * { box-sizing: border-box; }
+<div class="control-bar">
+    <img
+        id="playPlay"
+        src="./images/bobcat.gif"
+        onclick="toggleSlideshow()"
+        alt="Pause/Play"
+        title="Pause / Play slideshow">
+</div>
 
     /* Slideshow container */
     .slideshow-container {
@@ -12,12 +20,17 @@
         margin: auto;
     }
 
-    /* Play / Pause button */
-    #playPlay {
-        position: absolute;
-        top: 8px;
-        cursor: pointer;
-        display: none;
+	.control-bar {
+		text-align: center;
+		margin-bottom: -12px; /* pulls it closer to the TV */
+}
+
+	#playPlay {
+	   cursor: pointer;
+	   width: 70px;  /* adjust for mascot size */
+	   display: none;
+}
+
     }
 
     /* Hide the images by default */
