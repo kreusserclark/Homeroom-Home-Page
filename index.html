@@ -3,18 +3,28 @@
 <head>
     <title>English I Home</title>
     <style>
-        * { box-sizing: border-box; }
+    * { box-sizing: border-box; }
 
-        /* Slideshow container */
-        .slideshow-container {
-            max-width: 1000px;
-            position: relative;
-            margin: auto;
-        }
+    /* Slideshow container */
+    .slideshow-container {
+        max-width: 1000px;
+        position: relative;
+        margin: auto;
+    }
 
-        /* Hide the images by default */
-        .mySlides {
-            display: none;
+    /* Play / Pause button */
+    #playPlay {
+        position: absolute;
+        top: 8px;
+        cursor: pointer;
+        display: none;
+    }
+
+    /* Hide the images by default */
+    .mySlides {
+        display: none;
+    }
+
         }
 
         /* Fading animation */
@@ -29,7 +39,7 @@
         }
 
         .thumbnails {
-            text-align: center;
+            text-align: justify;
             margin-top: 0px;
         }
 
@@ -49,9 +59,9 @@
 <body>
 
 <!-- OPTIONAL AUDIO CONTROLS (can be removed if not needed) -->
-<center>
-       <img id="playPlay" src="./images/pause-button.gif" onclick="toggleSlideshow()" style="cursor: pointer; display: none" title="Pause/Play">
-</center>
+
+       <img id="playPlay" src="./images/pause-button.gif" onclick="toggleSlideshow()" style="cursor: pointer; display: none;">
+
 
 <script>
 let slideIndex = 0;
@@ -94,36 +104,49 @@ function currentSlide(n) {
 
 <!-- TELEVISION / SLIDESHOW AREA -->
 <div class="slideshow-container">
+<img
+  id="playPlay"
+  src="./images/pause-button.gif"
+  onclick="toggleSlideshow()"
+  alt="Pause/Play"
+  title="Pause/Play">
 
     <div class="mySlides fade">
         <img src="./images/welcomehr.gif" style="max-width:100%; height:auto;">
     </div>
 
     <div class="mySlides fade">
-        <img src="./images/video.gif" style="max-width:100%; height:auto;">
-    </div>
+        <a href="https://app.smore.com/n/8g0fm-tvah-announcements" target="_blank">
+		</a>
+		<img src="./images/video.gif" style="max-width:100%; height:auto;">
+	</div>
 
     <div class="mySlides fade">
-        <img src="./images/agenda.gif" style="max-width:100%; height:auto;">
+        <img src="./images/official.gif" style="max-width:100%; height:auto;">
+		</a>
     </div>
     <div class="mySlides fade">
         <img src="./images/announce.gif" style="max-width:100%; height:auto;">
-    </div>
-
-    
-    <!--  SLIDES THAT JUST NEED NAME CHANGES
-
-    <div class="mySlides fade">
-        <img src="./images/crowd.gif" style="max-width:100%; height:auto;">
+		</a>
     </div>
 
     <div class="mySlides fade">
-        <img src="./images/america.gif" style="max-width:100%; height:auto;">
+        <img src="./images/daily.gif" style="max-width:100%; height:auto;">
+		</a>
     </div>
-
+	
     <div class="mySlides fade">
-        <img src="./images/action.gif" style="max-width:100%; height:auto;">
+        <img src="./images/agenda.gif" style="max-width:100%; height:auto;">
+		</a>
     </div>
+	
+    <div class="mySlides fade">
+        <a href "https://forms.office.com/Pages/ResponsePage.aspx?id=LUmWRm1kPE2UZWxaNvMaFgoy3fVMDOZPvpOmQOQ7eO5UQTZPWkZQMDFZRFpORktXVUdMSTA5QlZXOS4u" target="_blank">
+		</a>
+		
+		<img src="./images/checkin.gif" style="max-width:100%; height:auto;">
+    </div>
+<!--  SLIDES THAT JUST NEED NAME CHANGES
 
     <div class="mySlides fade">
         <img src="./images/plan.gif" style="max-width:100%; height:auto;">
@@ -133,16 +156,17 @@ function currentSlide(n) {
     <div class="thumbnails" id="thumbnails" style="display:none;">
         <img src="./images/thumbnails/welcome-thumbnail.gif" onclick="currentSlide(1)">
         <img src="./images/thumbnails/video-thumbnail.gif" onclick="currentSlide(2)">
-        <img src="./images/thumbnails/agenda-thumbnail.gif" onclick="currentSlide(3)">
+        <img src="./images/thumbnails/official-thumbnail.gif" onclick="currentSlide(3)">
         <img src="./images/thumbnails/announce-thumbnail.gif" onclick="currentSlide(4)">
+		<img src="./images/thumbnails/daily-thumbnail.gif" onclick="currentSlide(5)">
+		<img src="./images/thumbnails/agenda-thumbnail.gif" onclick="currentSlide(6)">
+		<img src="./images/thumbnails/checkin-thumbnail.gif" onclick="currentSlide(7)">
 
 <!--  THUMBNAILS THAT JUST NEED NAME CHANGES
-        <img src="./images/thumbnails/crowd-thumbnail.gif" onclick="currentSlide(5)">
-        <img src="./images/thumbnails/america-thumbnail.gif" onclick="currentSlide(6)">
-        <img src="./images/thumbnails/action-thumbnail.gif" onclick="currentSlide(7)">
+        
         <img src="./images/thumbnails/plan-thumbnail.gif" onclick="currentSlide(8)">
  -->
-    </div>
+
 
 </div>
 
