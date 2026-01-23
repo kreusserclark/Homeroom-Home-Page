@@ -2,7 +2,6 @@
 <html>
 <head>
     <title>English I Home</title>
-
     <style>
         * { box-sizing: border-box; }
 
@@ -13,16 +12,142 @@
             margin: auto;
         }
 
-        /* Hide slides by default */
+        /* Hide the images by default */
         .mySlides {
             display: none;
         }
 
-        /* Fade animation */
+        /* Fading animation */
         .fade {
             animation-name: fade;
             animation-duration: 1.5s;
         }
 
         @keyframes fade {
-            from { opaci
+            from { opacity: .4; }
+            to { opacity: 1; }
+        }
+
+        .thumbnails {
+            text-align: justify;
+            margin-top: 0px;
+        }
+
+        .thumbnails img {
+            width: 90px;
+            margin: 12px;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .thumbnails img:hover {
+            border-color: #717171;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- OPTIONAL AUDIO CONTROLS (can be removed if not needed) -->
+
+       <img id="playPlay" src="./images/pause-button.gif" onclick="toggleSlideshow()" style="cursor: pointer; display: none; float: left; margin-left: 200px;" alt="Floating image" title="Pause/Play">
+
+
+<script>
+let slideIndex = 0;
+let slideInterval = setInterval(showSlides, 5000);
+let isPlaying = true;
+
+function showSlides() {
+    let slides = document.getElementsByClassName("mySlides");
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1; }
+    slides[slideIndex - 1].style.display = "block";
+
+    document.getElementById("thumbnails").style.display = "block";
+    document.getElementById("playPlay").style.display = "inline";
+}
+
+function toggleSlideshow() {
+    if (isPlaying) {
+        clearInterval(slideInterval);
+        isPlaying = false;
+    } else {
+        showSlides();
+        slideInterval = setInterval(showSlides, 3600);
+        isPlaying = true;
+    }
+}
+
+function currentSlide(n) {
+    slideIndex = n - 1;
+    showSlides();
+    if (isPlaying) {
+        clearInterval(slideInterval);
+        slideInterval = setInterval(showSlides, 3600);
+    }
+}
+</script>
+
+<!-- TELEVISION / SLIDESHOW AREA -->
+<div class="slideshow-container">
+
+    <div class="mySlides fade">
+        <img src="./images/welcomehr.gif" style="max-width:100%; height:auto;">
+    </div>
+
+    <div class="mySlides fade">
+       <img src="./images/video.gif" style="max-width:100%; height:auto;">
+	</div>
+
+    <div class="mySlides fade">
+         <a href="https://app.smore.com/n/8g0fm-tvah-announcements" target="_blank">
+		 <img src="./images/official.gif" style="max-width:100%; height:auto;">
+		 </a>
+    </div>
+    <div class="mySlides fade">
+        <img src="./images/announce.gif" style="max-width:100%; height:auto;">
+    </div>
+
+    <div class="mySlides fade">
+        <img src="./images/daily.gif" style="max-width:100%; height:auto;">
+    </div>
+	
+    <div class="mySlides fade">
+        <img src="./images/agenda.gif" style="max-width:100%; height:auto;">
+    </div>
+	
+    <div class="mySlides fade">
+        <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=LUmWRm1kPE2UZWxaNvMaFgoy3fVMDOZPvpOmQOQ7eO5UQTZPWkZQMDFZRFpORktXVUdMSTA5QlZXOS4u" target="_blank">
+		<img src="./images/checkin.gif" style="max-width:100%; height:auto;">
+		</a>
+	</div>
+<!--  SLIDES THAT JUST NEED NAME CHANGES
+
+    <div class="mySlides fade">
+        <img src="./images/plan.gif" style="max-width:100%; height:auto;">
+    </div> -->
+
+    <!-- Thumbnails -->
+    <div class="thumbnails" id="thumbnails" style="display:none;">
+        <img src="./images/thumbnails/welcome-thumbnail.gif" onclick="currentSlide(1)">
+        <img src="./images/thumbnails/video-thumbnail.gif" onclick="currentSlide(2)">
+        <img src="./images/thumbnails/official-thumbnail.gif" onclick="currentSlide(3)">
+        <img src="./images/thumbnails/announce-thumbnail.gif" onclick="currentSlide(4)">
+		<img src="./images/thumbnails/daily-thumbnail.gif" onclick="currentSlide(5)">
+		<img src="./images/thumbnails/agenda-thumbnail.gif" onclick="currentSlide(6)">
+		<img src="./images/thumbnails/checkin-thumbnail.gif" onclick="currentSlide(7)">
+
+<!--  THUMBNAILS THAT JUST NEED NAME CHANGES
+        
+        <img src="./images/thumbnails/plan-thumbnail.gif" onclick="currentSlide(8)">
+ -->
+
+
+</div>
+
+</body>
+</html>
